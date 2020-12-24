@@ -21,5 +21,5 @@ services:
 before_install:
   - sudo apt-get install jq
 script:
-  - docker login
+  - docker login -u "gitlab-ci-token" -p $CI_JOB_TOKEN $CI_REGISTRY
   - sudo bash ./build.sh
