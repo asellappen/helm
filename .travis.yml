@@ -1,7 +1,14 @@
 sudo: required
-
+arch:
+  - amd64
+  - ppc64le
+  
+dist: bionic
 services:
   - docker
-
+  
+  
 script:
   - bash ./build.sh
+  - docker build -t helm .
+  - docker run -it helm
