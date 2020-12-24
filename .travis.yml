@@ -1,13 +1,24 @@
+# ----------------------------------------------------------------------------
+#
+# Package             : helm
+# Source Repo         : https://github.com/alpine-docker/helm
+# Travis Job Link     : https://travis-ci.com/github/asellappen/helm/
+# Created travis.yml  : No
+# Maintainer          : Arumugam N S <asellappen@yahoo.com>
+#
+# Script License      : Apache License, Version 2 or later
+#
+# ----------------------------------------------------------------------------
+
 sudo: required
 arch:
   - amd64
   - ppc64le
-  
-dist: bionic
+
 services:
   - docker
   
 before_install:
   - sudo apt-get install jq
 script:
-  - bash ./build.sh
+  - sudo bash ./build.sh
