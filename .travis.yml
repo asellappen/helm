@@ -10,5 +10,3 @@ services:
   
 script:
   - bash ./build.sh
-  - docker build -t helm .
-  - docker run -it helm
