@@ -13,7 +13,10 @@ sudo: required
 
 services:
   - docker
-
+env:
+  global:
+    -  DOCKER_USERNAME=[secure]
+    -  DOCKER_PASSWORD=[secure]
 jobs:
   include:
     - stage: build amd64
