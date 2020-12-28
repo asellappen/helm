@@ -15,7 +15,7 @@ services:
   - docker
 
 jobs:
-  include:
+  - bash ./build.sh	  include:
     - stage: build amd64
       script: 
       - bash ./build.sh
@@ -26,6 +26,3 @@ jobs:
       - sudo apt-get -y install jq
       script:
       - bash ./build.sh
-    - stage: make multi-arch images
-      script:
-      - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then ./multiarch-image.sh; fi'
