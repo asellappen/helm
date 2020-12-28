@@ -18,11 +18,11 @@ jobs:
   include:
     - stage: build amd64
       script: 
-      - bash ./build.sh
+      - bash -x ./build.sh
     - stage: build ppc64le
       arch: ppc64le
       before_script:
       - sudo apt-get -qq update
       - sudo apt-get -y install jq
       script:
-      - bash ./build.sh
+      - bash -x ./build.sh
